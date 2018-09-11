@@ -1,5 +1,5 @@
 # centos 7 yum install ss-libev
-## add ss-libev repo
+## 1. add ss-libev repo
 - wget -O /etc/yum.repos.d/librehat-shadowsocks-libev.repo https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/repo/epel-7/librehat-shadowsocks-epel-7.repo
 ````
 cat /etc/yum.repos.d/librehat-shadowsocks-libev.repo
@@ -15,9 +15,9 @@ enabled=1
 enabled_metadata=1
 
 ````
-## yum install ss-libev
+## 2.  yum install ss-libev
 - yum -y install shadowsocks-libev
-## systemctl control shadowsocks-libev
+## 3. systemctl control shadowsocks-libev
 - systemctl enable shadowsocks-libev-server.service
    - cat /usr/lib/systemd/system/shadowsocks-libev.service
 ````
@@ -53,7 +53,7 @@ shadowsocks-libev.service - Shadowsocks-libev Default Server Service
            └─8266 /usr/bin/ss-server -v -c /etc/shadowsocks-libev/config.json -u
 ````
 - systemctl daemon-reload
-## config shadowsocks-libev
+## 4. config shadowsocks-libev
 - vim /etc/shadowsocks-libev/config.json
 ````
 {
