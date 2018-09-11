@@ -19,8 +19,8 @@ enabled_metadata=1
 - yum -y install shadowsocks-libev
 ## 3. systemctl control shadowsocks-libev
 - systemctl enable shadowsocks-libev-server.service
-   - cat /usr/lib/systemd/system/shadowsocks-libev.service
 ````
+cat /usr/lib/systemd/system/shadowsocks-libev.service
 [Unit]
 Description=Shadowsocks-libev Default Server Service
 Documentation=man:shadowsocks-libev(8)
@@ -54,7 +54,7 @@ shadowsocks-libev.service - Shadowsocks-libev Default Server Service
 ````
 - systemctl daemon-reload
 ## 4. config shadowsocks-libev
-- vim /etc/shadowsocks-libev/config.json
+- edit  /etc/shadowsocks-libev/config.json as below
 ````
 {
     "server":"REPLACE YOUR IP",
