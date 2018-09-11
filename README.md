@@ -4,4 +4,6 @@
 ## puredns
 ## systemd
 ## supervisord
+## kernel optimize for shadowsocks
+## haproxy
 ## 
