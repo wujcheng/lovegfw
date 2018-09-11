@@ -1,6 +1,20 @@
 # centos 7 yum install ss-libev
 ## add ss-libev repo
 - wget -O /etc/yum.repos.d/librehat-shadowsocks-libev.repo https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/repo/epel-7/librehat-shadowsocks-epel-7.repo
+````
+cat /etc/yum.repos.d/librehat-shadowsocks-libev.repo
+[librehat-shadowsocks]
+name=Copr repo for shadowsocks owned by librehat
+baseurl=https://copr-be.cloud.fedoraproject.org/results/librehat/shadowsocks/epel-7-$basearch/
+type=rpm-md
+skip_if_unavailable=True
+gpgcheck=1
+gpgkey=https://copr-be.cloud.fedoraproject.org/results/librehat/shadowsocks/pubkey.gpg
+repo_gpgcheck=0
+enabled=1
+enabled_metadata=1
+
+````
 ## yum install ss-libev
 - yum -y install shadowsocks-libev
 ## systemctl control shadowsocks-libev
