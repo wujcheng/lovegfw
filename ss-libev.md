@@ -5,6 +5,26 @@
 - yum -y install shadowsocks-libev
 ## systemctl control shadowsocks-libev
 - systemctl enable shadowsocks-libev-server.service
+   - cat /usr/lib/systemd/system/shadowsocks-libev.service
+````
+[Unit]
+Description=Shadowsocks-libev Default Server Service
+Documentation=man:shadowsocks-libev(8)
+After=network.target network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/sysconfig/shadowsocks-libev
+User=nobody
+Group=nobody
+LimitNOFILE=32768
+ExecStart=/usr/bin/ss-server -v -c "$CONFFILE" $DAEMON_ARGS
+CapabilityBoundingSet=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multi-user.target
+
+````
 - systemctl start shadowsocks-libev-server.service
 - systemctl status shadowsocks-libev-server.service
 ````
